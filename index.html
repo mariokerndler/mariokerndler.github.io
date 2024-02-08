@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine's Day Card</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="gifs/pokemon-mudkip.gif" class="gif" />
+
+      <h1 class="text">Will you be my Valentine?</h1>
+
+      <div class="buttons">
+        <button class="button green" onclick="acceptValentine()">Yes</button>
+        <button class="button red" onmouseover="moveButton(this)">No</button>
+      </div>
+    </div>
+
+    <script>
+      function acceptValentine() {
+        document.querySelector(".gif").src = "gifs/mudkip.gif";
+        document.querySelector(".text").textContent = "Ok yay!!!";
+        document.querySelector(".buttons").style.display = "none";
+      }
+
+      function moveButton(button) {
+        const x = Math.random() * (window.innerWidth - button.clientWidth);
+        const y = Math.random() * (window.innerHeight - button.clientHeight);
+        button.style.position = "absolute";
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+      }
+    </script>
+  </body>
+</html>
